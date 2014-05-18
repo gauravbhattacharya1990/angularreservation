@@ -1,0 +1,17 @@
+<div class="box_div" id="login_div"><div class="box_top_div">User log in</div><div class="box_body_div">
+
+	<form action="." id="login_form" autocomplete="off"><p>
+
+	<label for="user_email_input">Email:</label><br><input type="text" id="user_email_input" value="" autocapitalize="off" data-ng-model ='user.email'><br><br>
+	<label for="user_password_input">Password:</label><br><input type="password" id="user_password_input" value="" data-ng-model ='user.password'><br><br>
+	<input type="checkbox" id="remember_me_checkbox" checked="checked"> <label for="remember_me_checkbox" data-ng-model ='user.remember'>Remember me</label><br><br>		
+	<input type="button" value="Log in" data-ng-click="login()">
+
+	</p></form>
+
+	<p id="login_message_p">{{user.error}}</p>
+	<p><a href="#/adduser">New user</a> | <a href="#/forgot_password">Forgot password</a></p>
+	
+	{{emailpassword}}
+
+	</div></div>

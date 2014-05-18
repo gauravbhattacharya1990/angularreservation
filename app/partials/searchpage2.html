@@ -1,0 +1,54 @@
+<h1 class="search blue" >Which game are you going to play?</h1>
+<h2 class="search blue" >Search a play area near you</h2>
+
+<div class="box_div centred_div" id="search_div">
+<div class="search_box_body_div">
+<form action="." id="game_search_form">
+
+<table>
+<tr>
+	<td>Game type, ex: Badminton</td>
+	<td>Location, ex: Bellandur</td>
+</tr>
+<tr>
+	<td><input type="text" id="game_type_input" class="large_text" placeholder="Game type, ex: badminton" data-ng-model="game_type"></td>
+	<td><input type="text" id="location_input" class="large_text" placeholder="Location" autocapitalize="off" data-ng-model="location"></td>
+	<td><input type="button" value="Search" data-ng-click="SearchPlayGrounds()"></td>
+</tr>
+</table>
+
+</form>	
+
+<div ng-if="error">
+	<br/>
+	{{error}}
+</div>
+
+</div>
+</div>
+
+<div ng-if="venues.length > 0">
+
+<div class="flat_box_div centred_div filter">
+	<div class="flat_box_body_div ">
+		<p>Sort By : <a href="" ng-click="predicate = 'price'; reverse=false">Rate low to high</a> | <a href="" ng-click="predicate = '-price'; reverse=false">Rate high to low</a></p>
+	</div>
+</div>
+
+<div class="flat_box_div centred_div" data-ng-repeat="venue in venues | filter:game_type | orderBy:predicate:reverse">
+	<div class="flat_box_body_div ">
+		<h3><a href="#/ + {{venue.Playground_url}}">{{venue.Playground_name}}</a></h3>
+		<span class="soft">{{venue.Venue_sports_type | uppercase}}</span>
+		<br/>
+		 {{venue.Playground_locality}} > <span class="soft">{{venue.Playground_address}}</span>
+		<br/>
+		<span class="soft">Time slots : {{venue.Venue_time_slots}}</span>
+		<br/>
+		<span class="soft">Rate : {{venue.Venue_rate_per_time_slot}}</span> per slot
+		<span class="soft">Contact : {{venue.Venue_contact_number}}</span>
+		<br/>
+		<a href="">Reviews</a> | <a href="">Reservations</a>
+	</div>	
+</div>
+
+</div>	

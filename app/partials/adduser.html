@@ -1,0 +1,35 @@
+<div class="box_div" id="login_div"><div class="box_top_div"><a href="#">Start</a> &gt; New user</div><div class="box_body_div">
+	<div id="new_user_div"><div>
+
+	<form action="." id="new_user_form"><p>
+
+	<label for="user_name_input">Name:</label><br>
+	<input type="text" id="user_name_input"><br><br>
+	<label for="user_email_input">Email:</label><br>
+	<input type="text" id="user_email_input" autocapitalize="off"><br><br>
+	<label for="user_password_input">Password:</label><br>
+	<input type="password" id="user_password_input"><br><br>
+	<label for="user_password_confirm_input">Confirm password:</label><br>
+	<input type="password" id="user_password_confirm_input"><br><br>
+	<input type="submit" value="Create user">
+
+	</p></form>
+
+	</div><div>
+	
+	<p class="blue_p bold_p">Information:</p>
+	<ul>
+	<li>With just a click you can make your reservation</li>
+	<li>Your usage is stored automatically</li>
+	<li>Your password is encrypted and can't be read</li>
+	</ul>
+
+	<div id="user_secret_code_div">Secret code is used to only allow certain people to create a new user. Contact the webmaster by email at <span id="email_span"></span> to get the secret code.</div>
+
+	<script type="text/javascript">$('#email_span').html('<a href="mailto:'+$.base64.decode('<?php echo base64_encode(global_webmaster_email); ?>')+'">'+$.base64.decode('<?php echo base64_encode(global_webmaster_email); ?>')+'</a>');</script>
+
+	</div></div>
+
+	<p id="new_user_message_p"></p>
+
+	</div></div>
