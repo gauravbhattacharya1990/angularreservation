@@ -1,14 +1,14 @@
-<div ng-show="loading">
+<!-- <div ng-show="loading">
 <div id="notification_div" > Loading... </div>
-</div>
+</div> -->
 
 <h1 class="search blue" >Which game are you going to play?</h1>
 <h2 class="search blue" >Search a play area near you</h2>
 
-<div class="box_div centred_div" id="search_div" >
+<div class="box_div centred_div" id="search_div" data-ng-init="error=''">
 <div class="search_box_body_div">
 <form name="game_search_form" action="." id="game_search_form" novalidate>
-
+<div data-ng-show="loading">Loading...</div>
 <table>
 <tr>
 	<td>Game type, ex: Badminton</td>
@@ -28,7 +28,7 @@
 
 </form>	
 
-<div ng-if="error">
+<div ng-show="IsError">
 	<br/>
 	{{error}}
 </div>

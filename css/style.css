@@ -62,7 +62,7 @@ div#reservation_result_div
 
 div#notification_div
 {
-	/*display: none;*/
+	display: none;
 	position: fixed;
 	top: 0;
 	z-index: 200;

@@ -34,9 +34,9 @@ myapp.config(['$routeProvider','$locationProvider',
         templateUrl: 'app/partials/checkbooking.html',
         controller: 'myController'
       }).
-	  when('/playground/:playgroundURL' , {
+	  when('/playground/' , {
 		templateUrl : 'app/partials/playground.html',
-		controller : 'myController'
+		controller : 'PlaygroundHomePage_Ctrl'
 	  }).
       otherwise({
         redirectTo: '/'

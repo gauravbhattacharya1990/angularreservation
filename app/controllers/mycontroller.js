@@ -1,33 +1,18 @@
 myapp.controller('myController', function ($scope , $routeParams, simplefactory)
 {	
-var venues = [
-					{'name':'Playmania' , 'locality':'Bellandur' , 'address':'Outer Ring road bellandur' , 'game_type':'badminton' , 'price':'200'},
-					{'name':'Playmania' , 'locality':'Bellandur' , 'address':'Outer Ring road bellandur' , 'game_type':'Football' , 'price':'750'},
-					{'name':'Glow tennis' , 'locality':'Bellandur' , 'address':'Outer Ring road bellandur' , 'game_type':'badminton', 'price':'250'},
-					{'name':'My Badminton' , 'locality':'Bellandur' , 'address':'Outer Ring road bellandur' , 'game_type':'badminton', 'price':'200'},
-				];
-				
-	init();
-		
-	function init() {
-        //Grab customerID off of the route        
-        var playgroundURL = ($routeParams.playgroundURL) ;
-        
-        $scope.playground = 'value after doing an ajax call to : '+playgroundURL;
-		
-		console.log($scope.playground);
-    }
 				
 	$scope.SearchPlayGrounds = function(){
 		$scope.loading=true;
+		$scope.IsError=false;
 		
 		var PlayGrounds = simplefactory.SearchPlayGrounds($scope.game_type, $scope.location);
 		
-		if( angular.isUndefined($scope.game_type) && angular.isUndefined($scope.game_location) )
+		if(angular.isUndefined($scope.location))
 		{
 			$scope.loading=false;
+			$scope.IsError=true;
 			$scope.venues="";
-			$scope.error = "You need to enter at least location to search!";
+			$scope.error = "Location is required. Please enter the locality you want to search.";
 			return;
 		}
 		
@@ -35,6 +20,19 @@ var venues = [
 		function(data) {
 		$scope.venues = data;
 		$scope.loading=false;
+		if(data.length<=0)
+			{
+				$scope.IsError=true;
+				$scope.error="Your search returned no results. Please modify your query";
+			}
+		}
+		);
+		
+		PlayGrounds.error(
+		function(data) {
+		$scope.loading=false;
+		$scope.IsError=true;
+		$scope.error=data.message;
 		}
 		);
 		
