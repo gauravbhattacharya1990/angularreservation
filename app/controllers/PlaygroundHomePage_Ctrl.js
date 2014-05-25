@@ -1,12 +1,6 @@
-myapp.controller('PlaygroundHomePage_Ctrl', function ($scope , $routeParams, simplefactory)
-{	
-/*var venues = [/* 
-					{'name':'Playmania' , 'locality':'Bellandur' , 'address':'Outer Ring road bellandur' , 'game_type':'badminton' , 'price':'200'},
-					{'name':'Playmania' , 'locality':'Bellandur' , 'address':'Outer Ring road bellandur' , 'game_type':'Football' , 'price':'750'},
-					{'name':'Glow tennis' , 'locality':'Bellandur' , 'address':'Outer Ring road bellandur' , 'game_type':'badminton', 'price':'250'},
-					{'name':'My Badminton' , 'locality':'Bellandur' , 'address':'Outer Ring road bellandur' , 'game_type':'badminton', 'price':'200'}, 
-				];*/
-				
+//PlayGround home controller
+BookMeAGame.controller('PlaygroundHomePage_Ctrl', function ($scope , $routeParams, simplefactory)
+{					
 	init();
 		
 	function init() {

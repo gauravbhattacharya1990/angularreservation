@@ -1,28 +1,24 @@
-<!-- <div ng-show="loading">
-<div id="notification_div" > Loading... </div>
-</div> -->
+<div ng-show="loading">
+<div ng-show="loading" id="notification_inner_div">
+<div id="notification_inner_cell_div">Loading...</div>
+</div>
+</div>
 
 <h1 class="search blue" >Which game are you going to play?</h1>
 <h2 class="search blue" >Search a play area near you</h2>
 
-<div class="box_div centred_div" id="search_div" data-ng-init="error=''">
+<div class="box_div centred_div" id="search_div">
 <div class="search_box_body_div">
-<form name="game_search_form" action="." id="game_search_form" novalidate>
-<div data-ng-show="loading">Loading...</div>
+<form name="game_search_form" action="." id="game_search_form">
 <table>
 <tr>
 	<td>Game type, ex: Badminton</td>
 	<td>Location, ex: Bellandur</td>
 </tr>
 <tr>
-	<td><input type="text" name="game_type_input" id="game_type_input" class="large_text" placeholder="Game type, ex: badminton" data-ng-model="game_type" required></td>
-	<td><input type="text" name="location_input" id="location_input" class="large_text" placeholder="Location" autocapitalize="off" data-ng-model="location" required></td>
-	<td><input type="button" name="Search" value="Search" data-ng-click="SearchPlayGrounds()">	</td>
-</tr>
-<tr>
-	<td>
-		<span data-ng-show="game_search_form.game_type_input.$error.required && game_search_form.location_input.$error.required && clicked">Please enter atleast one search criteria</span>
-	</td>
+	<td><input type="text" name="game_type_input" id="game_type_input" class="large_text" placeholder="Game type, ex: badminton" data-ng-model="game_type"></td>
+	<td><input type="text" name="location_input" id="location_input" class="large_text" placeholder="Location" autocapitalize="off" data-ng-model="location"></td>
+	<td><input type="button" name="Search" value="Search" data-ng-click="SetSearchUrl()">	</td>
 </tr>
 </table>
 

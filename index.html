@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html data-ng-app="myapp">
+<html data-ng-app="BookMeAGame">
 
 <head>
 
@@ -19,7 +19,7 @@
 <script src="js/angular.route.js"></script>
 
 <script src="app/main.js"></script>
-<script src="app/controllers/mycontroller.js"></script>
+<script src="app/controllers/Controller.js"></script>
 <script src="app/controllers/PlaygroundHomePage_Ctrl.js"></script>
 <script src="app/factories/factory.js"></script>
 
@@ -32,8 +32,7 @@
 
 <body >
 
-<div id="notification_div"><div id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
-
+<div  id="notification_div"><div ng-show="loading" id="notification_inner_div"><div id="notification_inner_cell_div"></div></div></div>
 <div id="header_div" ng-include src="'app/partials/header.html'"></div>
 
 <div data-ng-view=""></div>

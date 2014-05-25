@@ -1,14 +1,14 @@
-var myapp = angular.module('myapp' , ['ngRoute']);
+var BookMeAGame = angular.module('BookMeAGame' , ['ngRoute']);
 
-myapp.config(['$routeProvider','$locationProvider',
+BookMeAGame.config(['$routeProvider','$locationProvider',
   function($routeProvider,$locationProvider) {
     $routeProvider.
 	  when('/', {
         redirectTo: '/search'
       }).
-	  when('/search', {
+	  when('/search/:location?/:game_type?', {
 		templateUrl: 'app/partials/searchpage.html',
-        controller: 'myController'
+        controller: 'SearchController'
       }).
       when('/userlogin', {
         templateUrl: 'app/partials/userlogin.html',
@@ -34,7 +34,7 @@ myapp.config(['$routeProvider','$locationProvider',
         templateUrl: 'app/partials/checkbooking.html',
         controller: 'myController'
       }).
-	  when('/playground/' , {
+	  when('/playground/:Playground_url' , {
 		templateUrl : 'app/partials/playground.html',
 		controller : 'PlaygroundHomePage_Ctrl'
 	  }).

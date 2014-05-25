@@ -62,11 +62,12 @@ div#reservation_result_div
 
 div#notification_div
 {
-	display: none;
+	/*display: none;*/
 	position: fixed;
 	top: 0;
 	z-index: 200;
 	width: 100%;
+	float: left
 	font-size: 12px;
 	overflow: hidden;
 	white-space: nowrap;
@@ -78,6 +79,7 @@ div#notification_inner_div
 	display: table;
 	margin: 0 auto;
 	height: 100%;
+	/*z-index: -1;*/
 	background-color: #ffffaa;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
@@ -700,4 +702,26 @@ hr.thick_hr
 {
 	border-bottom-left-radius: 0px;
 	border-top-left-radius: 0px;
+}
+
+div#my-show-hide-animation.ng-show-add,
+div#my-show-hide-animation.ng-show-remove {
+	/*display: none;*/
+	position: fixed;
+	top: 0;
+	z-index: 200;
+	width: 100%;
+	font-size: 12px;
+	overflow: hidden;
+	white-space: nowrap;
+	pointer-events: none;
+  -webkit-transition:0.25s ease-in;
+  transition:0.25s ease-in;
+
+  /* remember to add this */
+  display:block!important;
+  opacity:0;
+}
+div#my-show-hide-animation.ng-show {
+  opacity:1;
 }
